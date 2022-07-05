@@ -21,7 +21,7 @@ res = requests.get("http://api.openweathermap.org/data/2.5/weather", params={'q'
 data = res.json()
 
 print(bcolors.BOLD + bcolors.OKGREEN + "Прогноз погоды на сегодня: " + bcolors.ENDC)
-print("Город:", CITY, "🇹🇯")
+print("Город:", CITY)
 print("Погодные условия:", data['weather'][0]['description'])
 print("Температура:", '{0:+3.0f}'.format(data['main']['temp']) + "°C")
 print("Скорость ветра:", data['wind']['speed'], "м/с")
@@ -44,3 +44,5 @@ for i in data['list']:
               "\nВидимость:", i['visibility'], "м")
         print(bcolors.WARNING + "____________________________" + bcolors.ENDC)
     cnt += 1
+
+input()
